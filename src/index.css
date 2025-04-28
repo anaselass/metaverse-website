@@ -1,13 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-Montserrat: "Montserrat", sans-serif;
+  --font-Parisienne: "Parisienne", cursive;
   --color-primary: #00c2ff;
   --color-secondary: #dd0bff;
   --color-dark: #111111;
   --container-padding: 1rem;
   --container-padding-sm: 3rem;
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-gradient-to-r from-primary to-secondary duration-300 py-2 px-6 text-white rounded-full hover:scale-105 cursor-pointer;
+  }
+}
+
+.animated-wrapper {
+  animation-name: move-wrapper;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  position: absolute;
+}
+
+@keyframes move-wrapper {
+  0% {
+    transform: translate(150%, 30%) rotate(0) scale(0.8);
+  }
+  50% {
+    transform: translate(60vw, 0vw) rotate(150deg) scale(1.2);
+  }
+  70% {
+    transform: translate(40vw, 40vw) rotate(0deg) scale(0.8);
+  }
+  100% {
+    transform: translate(150%, 30%) rotate(0) scale(0.8);
+  }
 }
