@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Quotes from "./Components/Quotes/Quotes";
 import Features from "./Components/Features/Features";
 import AppStore from "./Components/AppStore/AppStore";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       </div>
       <Features />
       <AppStore />
+      <Footer />
     </main>
   );
 }
