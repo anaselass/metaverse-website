@@ -6,13 +6,21 @@ import Quotes from "./Components/Quotes/Quotes";
 import Features from "./Components/Features/Features";
 import AppStore from "./Components/AppStore/AppStore";
 import Footer from "./Components/Footer/Footer";
+import PoupPlayer from "./Components/PoupPlayer/PoupPlayer";
+
+import { useState } from "react";
 
 function App() {
+  const [isPlay, setIsPlay] = useState(false);
+
+  const toogglePlay = () => {
+    setIsPlay(!isPlay);
+  };
   return (
     <main className=" overflow-hidden bg-white dark:bg-black transition-colors duration-300">
       <Navbar />
       <div className="relative">
-        <Hero />
+        <Hero toogglePlay={toogglePlay} />
         <Quotes />
         <div
           className="w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px]  bg-gradient-to-r from-primary to-secondary rounded-full 
@@ -20,8 +28,8 @@ function App() {
         ></div>
       </div>
       <div className="relative">
-        <Banner />
-        <Banner2 />
+        <Banner toogglePlay={toogglePlay} />
+        <Banner2 toogglePlay={toogglePlay} />
         <div
           className="w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px]  bg-gradient-to-r from-primary to-secondary rounded-full 
           absolute top-[100px] left-[-300px] blur-3xl animated-wrapper opacity-50"
@@ -30,6 +38,9 @@ function App() {
       <Features />
       <AppStore />
       <Footer />
+
+      {/* video player */}
+      <PoupPlayer isPlay={isPlay} toogglePlay={toogglePlay} />
     </main>
   );
 }
