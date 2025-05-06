@@ -8,7 +8,10 @@ import AppStore from "./Components/AppStore/AppStore";
 import Footer from "./Components/Footer/Footer";
 import PoupPlayer from "./Components/PoupPlayer/PoupPlayer";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [isPlay, setIsPlay] = useState(false);
@@ -16,6 +19,18 @@ function App() {
   const toogglePlay = () => {
     setIsPlay(!isPlay);
   };
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      offset: 120,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <main className=" overflow-hidden bg-white dark:bg-black transition-colors duration-300">
       <Navbar />

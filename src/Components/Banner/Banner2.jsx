@@ -8,20 +8,32 @@ const Banner2 = ({ toogglePlay }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-center">
           {/* text content section */}
           <div className="space-y-5 order-2 sm:order-1 w-1xl mr-auto md:px-9 px-4">
-            <h1 className="text-4xl font-semibold">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="text-4xl font-semibold"
+            >
               GET READY TO ENJOY VR{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                 MOVIES WITH OUR PLATFORM
               </span>
             </h1>
-            <p className="">
+            <p data-aos="fade-up" data-aos-delay="500" className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
               quisquam ab, illo maiores magni dolorum repellat cumque atque
               doloribus, et, id ipsum eaque architecto
             </p>
             <div className="flex gap-5">
-              <button className="primary-btn">Get Started</button>
               <button
+                data-aos="fade-up"
+                data-aos-delay="700"
+                className="primary-btn"
+              >
+                Get Started
+              </button>
+              <button
+                data-aos="fade-up"
+                data-aos-delay="700"
                 onClick={toogglePlay}
                 className="flex gap-2 items-center cursor-pointer"
               >
@@ -33,6 +45,7 @@ const Banner2 = ({ toogglePlay }) => {
           {/* image section */}
           <div className="order-1 sm:order-2">
             <img
+              data-aos="fade-up"
               src={BannerPng}
               alt="BannerPng"
               className="w-full max-w-[400px]"

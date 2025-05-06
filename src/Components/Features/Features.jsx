@@ -10,7 +10,7 @@ const FeaturesData = [
     ),
     link: "#",
     descreption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    aosDelay: "0",
+    aosDelay: "300",
   },
   {
     name: "Safe Transactions",
@@ -28,7 +28,7 @@ const FeaturesData = [
     ),
     link: "#",
     descreption: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    aosDelay: "1000",
+    aosDelay: "700",
   },
 ];
 
@@ -37,13 +37,18 @@ const Features = () => {
     <>
       <div className="container max-w-screen-2xl mx-auto text-black dark:text-white py-14 sm:min-h-[600px]">
         <div>
-          <h1 className="text-3xl sm:text-4xl font-semibold text-center">
+          <h1
+            data-aos="fade-up"
+            className="text-3xl sm:text-4xl font-semibold text-center"
+          >
             Why Choose Us
           </h1>
           {/* cards section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-10 lg:mx-20 mt-12">
             {FeaturesData.map((item, index) => (
               <div
+                data-aos="fade-up"
+                data-aos-delay={item.aosDelay}
                 key={index}
                 className="group text-center space-y-3 sm:space-y-6 p-4 sm:py-10
                         bg-dark hover:bg-gradient-to-r from-primary to-secondary
